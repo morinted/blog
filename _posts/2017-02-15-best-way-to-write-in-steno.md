@@ -1,7 +1,7 @@
 ---
 layout: post
-title: The best way to write in steno
-date: '2016-02-15T21:30+5:00'
+title: "The best way to write in steno"
+description: "Stanley's impromptu rant on the right way to write steno"
 tags:
 - steno
 ---
