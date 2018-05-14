@@ -12,7 +12,7 @@ dependencies:
 test:
   post:
     - bundle exec jekyll build -d ./_site/blog
-    - bundle exec htmlproofer ./_site --only-4xx --allow-hash-href --assume-extension
+    - bundle exec htmlproofer ./_site --only-4xx --allow-hash-href --assume-extension --empty-alt-ignore
 
 deployment:
   production:

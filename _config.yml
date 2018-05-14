@@ -56,7 +56,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor/
-gems:
+plugins:
   - jekyll-assets
   - jekyll-paginate
   - jekyll-sitemap

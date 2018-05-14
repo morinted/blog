@@ -73,22 +73,22 @@ I went ahead and created a workspace and disabled pretty much every single plugi
 
 ```json
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.autoSave": "afterDelay",
-		"editor.wordWrap": "on",
-		"editor.autoClosingBrackets": false,
-		"editor.autoIndent": false,
-		"editor.quickSuggestions": false,
-		"editor.parameterHints": false,
-		"editor.formatOnType": false,
-		"editor.suggestOnTriggerCharacters": false,
-		"editor.fontFamily": "Noto Sans"
-	},
+ "folders": [
+  {
+   "path": "."
+  }
+ ],
+ "settings": {
+  "files.autoSave": "afterDelay",
+  "editor.wordWrap": "on",
+  "editor.autoClosingBrackets": false,
+  "editor.autoIndent": false,
+  "editor.quickSuggestions": false,
+  "editor.parameterHints": false,
+  "editor.formatOnType": false,
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.fontFamily": "Noto Sans"
+ }
 }
 ```
 
@@ -100,7 +100,7 @@ The above settings also contain autosave, which defaults to once a second after 
 
 Now my setup looks something like this:
 
-![Screenshot of VSCode with an in-progress transcript, Plover in the enabled state, and VLC playing a podcast]({{ "/assets/transcribing_screenshot.png" | absolute_url }})
+{% asset transcribing_screenshot.png alt='Screenshot of VSCode with an in-progress transcript, Plover in the enabled state, and VLC playing a podcast' %}
 
 *Note 1: VSCode has both light and dark themes, which I'd change to match the lighting in my office.*
 
