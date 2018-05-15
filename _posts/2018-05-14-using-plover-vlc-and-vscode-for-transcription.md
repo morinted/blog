@@ -12,13 +12,13 @@ First, I want to talk about what I did the first time I tried transcribing, and 
 
 ## ExpressScribe
 
-The first time I tried transcribing, I used the well-recommended ExpressScribe for Mac. This is an all-inclusive application for transcribing. You open up the audio file in ExpressScribe itself. You get a global shortcut to insert the current timestamp as well as the ability to map shortcuts for skipping ahead, behind, and changing the playback speed. The application also has a text editor built-in, but I didn't use it because I found it pretty ugly. ExpressScribe also didn't support the HiDPI/Retina screen scaling on Mac, so it looked pretty terrible on my screen.
+The first time I tried transcribing, I used the well-recommended ExpressScribe for Mac. This is an all-inclusive application for transcribing. You open up your audio file in ExpressScribe itself. You get global shortcuts that you can use to insert the current timestamp, skip ahead, skip back, and change the playback speed. The application also has a text editor built-in, but because ExpressScribe didn't support DPI scaling on Mac, it looked ugly and I didn't use it.
 
-What's good about ExpressScribe is that it's very friendly to typists/keyboarding users, and I think that's something that my system wouldn't fix. My new solution is very tied to controlling everything with Plover, which I really enjoy as a Plover user, but a keyboard transcriptionist probably wouldn't get the same benefits.
+What's good about ExpressScribe is that it's very friendly to typists. My solution is very tied to controlling everything with Plover, which I really enjoy as a Plover user, but a keyboard transcriptionist probably wouldn't get the same benefits.
 
-Because I didn't use ExpressScribe's text input box, I had to substitute it. At the time, I used Sublime Text, which I trusted as my fastest text editor apart from vim. However, Sublime really struggled with the lack of line breaks. I opted to keep speakers on separate lines and just word wrap for the bulk the text. Sublime did end up chugging when using this style, unfortunately. Maybe there could be some optimizations, but at the time I was just trying to get the work done for the 24-hour deadline.
+When I used ExpressScribe, I didn't use its text editor, so I had to substitute it. At the time, I used Sublime Text, which I trusted as my fastest text editor apart from vim. However, Sublime really struggled with the lack of line breaks. I opted to keep speakers on separate lines and just word wrap for the bulk the text. Sublime ended up chugging when using this style, unfortunately. Maybe there could be some optimizations, but at the time I was just trying to get the work done for the 24-hour deadline.
 
-Setting up the timestamp pasting from ExpressScribe was okay. I had to add the formatting in the ExpressScribe side, not the steno side, because Plover was too fast for ExpressScribe. Say that my global shortcut to paste the timestamp was F6, then the Plover translation `{[^}{#F6}{^]}` would output `[]00:00:01` instead of the desired `[00:00:01]`. This was mitigated by just configuring that within the ExpressScribe side which, again, is better for keyboardists.
+Setting up the timestamp pasting from ExpressScribe was a minor challenge. I had to add the formatting on the ExpressScribe side, not the steno side, because Plover was too fast for ExpressScribe. Say that my global shortcut to paste the timestamp was F6, then the Plover translation `{[^}{#F6}{^]}` would output `[]00:00:01` instead of the desired `[00:00:01]`. This was mitigated by just configuring the formatting from within the ExpressScribe side.
 
 ## VLC Commands
 
@@ -26,32 +26,32 @@ The reason I decided to reevaluate my setup is because Benoit Pierre, Plover dev
 
 ### Controlling playback
 
-The setup for VLC was as follows:
+The setup for [VLC](https://www.videolan.org) was as follows:
 
-1. In VLC settings, click "Enable HTTP Interface" and set a password.
-1. Open Plover 4.x, go to the Plugins Manager, find and install VLC Commands, then restart Plover.
-1. Create a `vlc.json` following the example in the plugin documentation, changing "password" to the password I just set. You have to put this file next to your plover.cfg
-1. Restart Plover one last time and you should be all set up to control VLC whenever it's running.
+1. In VLC settings, click **Enable HTTP Interface** and set a password.
+1. Open Plover 4.x, go to the **Plugins Manager**, find and install **plover-vlc-commands**, then restart Plover.
+1. Create a `vlc.json` following the example in the plugin documentation, changing "password" to the password you just set. You have to put this file next to your `plover.cfg`
+1. Restart Plover one last time and you should be all set up to control VLC whenever it's running!
 
 Here are the strokes that I created for playing and skipping:
 
 - `KPH-FPG`: `{PLOVER:VLC_seek:-4s}`
 
-    This skips the file back 4 seconds. Rather than pausing when I fall behind, I find it much better to just skip back. This keeps the momentum up and lets you review your work as you'll inevitably sometimes back up a little too far.
+    This skips the file back 4 seconds. Rather than pausing when falling behind, it's much better to just skip back. This keeps the momentum up and lets you review your work as you go.
 - `KPH*FPG`: `{PLOVER:VLC_toggle_pause}`
 
-    I *try* not to pause, but when someone calls or I have to take an hourly break to walk around, you do need to pause and then resume when you come back. This command takes care of that.
+    I *try* not to pause, but when someone calls or I have to take an hourly break to walk around, I do need to pause and then resume when I come back. This command takes care of that.
 
-*On foot pedals:* I do not use a foot pedal, nor do I think one is necessary for transcribing when you are using a steno machine. Strokes are so readily available at any given time that I don't think having a separate device and limb to handle backing up is necessary. Plus, if you use strokes, you can create more and more creative uses and vary up functions more easily. Foot pedals tend to just have a single action and that's a pretty big disadvantage.
+*On foot pedals:* I do not use a foot pedal, nor do I think one is necessary for transcribing when you are using a steno machine. Strokes are so readily available at any given time that I don't think having a separate device and limb to handle skipping backwards is necessary. Plus, if you use steno, you can come up with new strokes uses and vary up functions without removing your old ones. Foot pedals tend to just have a single action and that's a pretty big disadvantage.
 
 ### Timestamps and Speaker Strokes
 
-You could have a dedicated stroke to paste a timestamp, but as the podcast I was transcribing didn't have any particular need for timestamps of a regular interval, I just placed one on every speaker change. For that reason, it was super convenient to integrate the speaker and the timestamp in the same stroke. Here's what I used for my two-speaker setup:
+You could have a dedicated stroke to paste a timestamp, but as the podcast I was transcribing didn't have any particular need for timestamps at a regular interval, I just placed one on every speaker change. For that reason, it was super convenient to integrate the speaker and the timestamp in the same stroke. Here's what I used for my two-speaker setup:
 
 - `STPHAO`: `{^\n\n[^}{:VLC_timestamp}{^]}SPEAKER 1:{-|}`
 - `EUFPLT`: `{^\n\n[^}{:VLC_timestamp}{^]}SPEAKER 2:{-|}`
 
-Of course, real names were included instead of just placeholders. I found the bank-style speaker outlines (top row plus vowels for either side) worked really well for me. I visualized one speaker to my left and one to my right and it made it really trivial to just insert the appropriate speaker stroke whenever the voice changed. The speaker strokes also automatically insert the paragraph breaks, so I never actually had to insert a line break manual, which I found pretty satisfying.
+Of course, real names were included instead of just placeholders. I found the bank-style speaker outlines (top row plus vowels for either side) worked really well for me. I visualized one speaker to my left and one to my right and it made it really trivial to just insert the appropriate speaker stroke whenever the voice changed. The speaker strokes also automatically insert the paragraph breaks, so I never actually had to insert a line break manually, which was satisfying.
 
 Finally, the Plover dictionary comes with a stroke…
 
@@ -61,15 +61,15 @@ Finally, the Plover dictionary comes with a stroke…
 
 ## Visual Studio Code
 
-VSCode is a free text editor released by Microsoft. I've found it really useful for general-purpose programming, and was curious as to whether I could use it for taking transcriptions.
+[VSCode](https://code.visualstudio.com/) is a free text editor by Microsoft. I've found it really useful for programming, and was curious as to whether I could use it for writing transcripts.
 
 VSCode does have extensions for vi-style bindings, but I found that its presence interfered with Plover's rapid editing speed on Mac, unfortunately. So for the purpose of taking down text, I disabled vi bindings.
 
 ### Workspace Settings
 
-As I use VSCode to program, I didn't want to change everything and ruin what I had going from the coding side. VSCode has a feature called workspaces where you can save a particular set of settings and enabled extensions without affecting the rest of your workspaces.
+As I use VSCode to program, I didn't want to change lose all my code-friendly settings. Thankfully, VSCode has a feature called workspaces where you can save a particular set of settings and enabled extensions without affecting the rest of your workspaces.
 
-I went ahead and created a workspace and disabled pretty much every single plugin in order to get the most performance out of the editor that I could. Then, I disabled any sort of code-completing features as they are very distracting while taking transcription. In order to accomplish this, I made this Workspace Settings object, which is done in JSON:
+I went ahead and created a workspace and disabled pretty much every single plugin in order to get the most performance out of the editor. Then, I disabled any sort of code-completing features as they are very distracting while writing transcripts. These were my workspace settings:
 
 ```json
 {
@@ -92,9 +92,9 @@ I went ahead and created a workspace and disabled pretty much every single plugi
 }
 ```
 
-Of note, I also set the font family to Noto Sans, which is not a fixed-width font. Fixed-width is great for programming but when you use emdashes and Unicode ellipses, they appear collapsed and crowded. Noto Sans is a free body font that can be [downloaded from Google Fonts](https://fonts.google.com/specimen/Noto+Sans) and I enjoyed it very much for this job.
+Of note, I also set the font family to Noto Sans, which is not a fixed-width font. Fixed-width is great for programming but when you use emdashes and Unicode ellipses, they appear collapsed and crowded in your text. Noto Sans is a free body font that can be [downloaded from Google Fonts](https://fonts.google.com/specimen/Noto+Sans) and I enjoyed it very much for this job.
 
-The above settings also contain autosave, which defaults to once a second after edits are made. I also stored my files in Google Drive so that I got some revisions/backups.
+The above settings also contain autosave, which defaults to once a second after edits are made. Finally, I stored my files in Google Drive so that I got some revisions/backups.
 
 ## The Result
 
