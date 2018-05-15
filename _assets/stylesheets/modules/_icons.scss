@@ -4,16 +4,13 @@
 
 // Settings
 // =============================================================================
-//require=ionicons.eot
-//require=ionicons.woff
-//require=ionicons.ttf
 @charset "UTF-8";
 
 @font-face {
   font-family: ionicons;
-  src: url(asset_path("ionicons.eot?#iefix")) format("embedded-opentype"),
-  url(asset_path("ionicons.woff")) format("woff"),
-  url(asset_path("ionicons.ttf"))  format("truetype");
+  src: asset_url("ionicons.eot?#iefix") format("embedded-opentype"),
+  asset_url("ionicons.woff") format("woff"),
+  asset_url("ionicons.ttf") format("truetype");
 }
 
 // Component
