@@ -12,7 +12,7 @@ First, I want to talk about what I did the first time I tried transcribing, and 
 
 ## ExpressScribe
 
-The first time I tried transcribing, I used the well-recommended ExpressScribe for Mac. This is an all-inclusive application for transcribing. You open up the audio file in ExpressScribe itself. You get a global shortcut to insert the current timestamp as well as the ability to map shortcuts for skipping ahead, behind, and chaneing the playback speed. The application also has a text editor built-in, but I didn't use it because I found it pretty ugly. ExpressScribe also didn't support the HiDPI/Retina screen scaling on Mac, so it looked pretty terrible on my screen.
+The first time I tried transcribing, I used the well-recommended ExpressScribe for Mac. This is an all-inclusive application for transcribing. You open up the audio file in ExpressScribe itself. You get a global shortcut to insert the current timestamp as well as the ability to map shortcuts for skipping ahead, behind, and changing the playback speed. The application also has a text editor built-in, but I didn't use it because I found it pretty ugly. ExpressScribe also didn't support the HiDPI/Retina screen scaling on Mac, so it looked pretty terrible on my screen.
 
 What's good about ExpressScribe is that it's very friendly to typists/keyboarding users, and I think that's something that my system wouldn't fix. My new solution is very tied to controlling everything with Plover, which I really enjoy as a Plover user, but a keyboard transcriptionist probably wouldn't get the same benefits.
 
