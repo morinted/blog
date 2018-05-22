@@ -4,7 +4,6 @@ name: teds.space
 paginate: 25
 paginate_path: "/posts/page/:num/"
 url: https://teds.space
-baseurl: /
 blog_theme: light
 
 # Optional settings
