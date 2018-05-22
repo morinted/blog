@@ -3,8 +3,8 @@
 name: teds.space
 paginate: 25
 paginate_path: "/posts/page/:num/"
-url: http://tedmor.in
-baseurl: /blog
+url: https://teds.space
+baseurl: /
 blog_theme: light
 
 # Optional settings
