@@ -9,7 +9,6 @@ set -e
 # Set up Ruby dependencies via Bundler.
 gem install bundler:1.16.1 --conservative
 bundle check || bundle install
-bundle update
 
 # Set up JS dependencies via Bower.
 npx bower install
