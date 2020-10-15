@@ -1,15 +1,15 @@
 version: 2.1
 
-workflow:
+workflows:
   build_and_deploy:
     jobs:
       - build
       - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 jobs:
   build:
     docker:
