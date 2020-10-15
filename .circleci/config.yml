@@ -1,7 +1,7 @@
 version: 2.1
 
 workflow:
-  deploy:
+  build_and_deploy:
     jobs:
       - build
       - deploy:
@@ -10,11 +10,10 @@ workflow:
         filters:
           branches:
             only: master
-
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.0
+      - image: circleci/ruby:2.7.0-node
         auth:
           username: morinted
           password: $DOCKERHUB_PASSWORD
@@ -34,7 +33,7 @@ jobs:
               cp ./CNAME ./_site/CNAME
   deploy:
     docker:
-      - image: circleci/ruby:2.7.0
+      - image: circleci/ruby:2.7.0-node
         auth:
           username: morinted
           password: $DOCKERHUB_PASSWORD
