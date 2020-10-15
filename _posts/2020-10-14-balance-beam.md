@@ -2,8 +2,7 @@
 layout: post
 title: "Building a DIY Balance Beam Rail"
 description: "A fun indoor or outdoor activity to test your balance at a fraction of the cost of commercial solutions."
-tags:
-- movement
+tags: movement
 ---
 
 ## Not a gymnastics balance beam

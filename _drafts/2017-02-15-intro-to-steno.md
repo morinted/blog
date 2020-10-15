@@ -3,8 +3,10 @@ published: false
 layout: post
 description: Intro to Stenography
 tags:
-  - steno
+- steno
+
 ---
+
 Hello, my name is Ted Morin, and today I'm going to give you an introduction to stenography and show you what it looks like to write on a steno machine.
 
 Stenography is the art of shorthand, it's a skill that lets you write out in longhand (meaning: fully spelled out words and sentences) while saving lots of energy with a simpler, "shorter" system. The reduction in movement and complexity of language into shorthand means that stenographers can keep up with someone speaking, which is necessary in a courtroom setting where every word is to be recorded for the purpose of law and there are often multiple speakers, sometimes speaking over each other.
