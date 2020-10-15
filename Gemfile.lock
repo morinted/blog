@@ -127,7 +127,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   html-proofer
-  jekyll (~> 3.8.1)
+  jekyll
   jekyll-assets
   jekyll-paginate
   jekyll-sitemap
