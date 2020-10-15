@@ -18,7 +18,7 @@ fi
 git checkout -b gh-pages
 
 # Build site.
-bower install
+npx bower install
 bundle exec jekyll build
 
 # Delete and move files.
@@ -36,7 +36,7 @@ git push -f $ORIGIN_URL gh-pages
 
 # Move back to previous branch.
 git checkout -
-bower install
+npx bower install
 
 echo "Deployed Successfully!"
 

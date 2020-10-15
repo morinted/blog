@@ -12,5 +12,4 @@ bundle check || bundle install
 bundle update
 
 # Set up JS dependencies via Bower.
-npm i -g bower
-bower install
+npx bower install
