@@ -1,4 +1,0 @@
----
-slug: movement
-name: Movement
----

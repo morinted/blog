@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>teds.space | Using Plover, VLC, and VSCode for Transcription</title>
+  <meta name="description" content="A guide detailing my setup for using Plover, VLC, and VSCode to write timestamped transcriptions.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://teds.space/favicon.ico" type="image/x-icon" />
+
+  <meta property="og:title" content="Using Plover, VLC, and VSCode for Transcription">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription">
+  <meta property="og:description" content="A guide detailing my setup for using Plover, VLC, and VSCode to write timestamped transcriptions.">
+  <meta property="og:site_name" content="teds.space">
+  <meta property="og:image" content="https://teds.space/assets/og-image-441e309118b7f61b9fecbe0ec9ab6ff7e95fa7c67454fc84b0f0718f5e5f4792.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription">
+  <meta name="twitter:title" content="Using Plover, VLC, and VSCode for Transcription">
+  <meta name="twitter:description" content="A guide detailing my setup for using Plover, VLC, and VSCode to write timestamped transcriptions.">
+  <meta name="twitter:image" content="https://teds.space/assets/og-image-441e309118b7f61b9fecbe0ec9ab6ff7e95fa7c67454fc84b0f0718f5e5f4792.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-b22bd14acb63ee6a79ef145988fcf489786372f0ededa6ead21f5f2020496acb.png">
+  <link href="https://teds.space/feed.xml" type="application/rss+xml" rel="alternate" title="teds.space Last 10 blog posts" />
+
+  
+    <link rel="stylesheet" type="text/css" integrity="sha256-1f9xHGtwx54teLbRVC+6kfuhOaDLXNlHlib+929DQKk=" crossorigin="anonymous" href="/assets/light-d5ff711c6b70c79e2d78b6d1542fba91fba139a0cb5cd9479626fef76f4340a9.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav">
+  <a href="/" class="header-logo" title="teds.space">teds.space</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <span class="icon icon-android-person"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://twitter.com/morinted" target="_blank" title="Twitter">
+          <span class="icon icon-social-twitter"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://www.facebook.com/morinted" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/morinted" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/morinted" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:morinted@gmail.com" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article">
+          <header class="article-header">
+            <h1>Using Plover, VLC, and VSCode for Transcription</h1>
+            <p>A guide detailing my setup for using Plover, VLC, and VSCode to write timestamped transcriptions.</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                May 14, 2018
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  6 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/steno">steno</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>This past weekend, I tried transcribing for a second time. I had such a blast with my new setup using only free software that I really wanted to document it so that others could emulate it for themselves.</p>
+
+<p>First, I want to talk about what I did the first time I tried transcribing, and what did and didn’t work about that setup.</p>
+
+<h2 id="expressscribe">ExpressScribe</h2>
+
+<p>The first time I tried transcribing, I used the well-recommended ExpressScribe for Mac. This is an all-inclusive application for transcribing. You open up your audio file in ExpressScribe itself. You get global shortcuts that you can use to insert the current timestamp, skip ahead, skip back, and change the playback speed. The application also has a text editor built-in, but because ExpressScribe didn’t support DPI scaling on Mac, it looked ugly and I didn’t use it.</p>
+
+<p>What’s good about ExpressScribe is that it’s very friendly to typists. My solution is very tied to controlling everything with Plover, which I really enjoy as a Plover user, but a keyboard transcriptionist probably wouldn’t get the same benefits.</p>
+
+<p>When I used ExpressScribe, I didn’t use its text editor, so I had to substitute it. At the time, I used Sublime Text, which I trusted as my fastest text editor apart from vim. However, Sublime really struggled with the lack of line breaks. I opted to keep speakers on separate lines and just word wrap for the bulk the text. Sublime ended up chugging when using this style, unfortunately. Maybe there could be some optimizations, but at the time I was just trying to get the work done for the 24-hour deadline.</p>
+
+<p>Setting up the timestamp pasting from ExpressScribe was a minor challenge. I had to add the formatting on the ExpressScribe side, not the steno side, because Plover was too fast for ExpressScribe. Say that my global shortcut to paste the timestamp was F6, then the Plover translation <code class="highlighter-rouge">{[^}{#F6}{^]}</code> would output <code class="highlighter-rouge">[]00:00:01</code> instead of the desired <code class="highlighter-rouge">[00:00:01]</code>. This was mitigated by just configuring the formatting from within the ExpressScribe side.</p>
+
+<h2 id="vlc-commands">VLC Commands</h2>
+
+<p>The reason I decided to reevaluate my setup is because Benoit Pierre, Plover developer extraordinare, developed <a href="https://pypi.org/project/plover-vlc-commands/">a Plover VLC commands plugin</a> to control VLC over its HTTP interface. This means you can skip, pause, play, and get timestamps directly from the context of Plover translations.</p>
+
+<h3 id="controlling-playback">Controlling playback</h3>
+
+<p>The setup for <a href="https://www.videolan.org">VLC</a> was as follows:</p>
+
+<ol>
+  <li>In VLC settings, click <strong>Enable HTTP Interface</strong> and set a password.</li>
+  <li>Open Plover 4.x, go to the <strong>Plugins Manager</strong>, find and install <strong>plover-vlc-commands</strong>, then restart Plover.</li>
+  <li>Create a <code class="highlighter-rouge">vlc.json</code> following the example in the plugin documentation, changing “password” to the password you just set. You have to put this file next to your <code class="highlighter-rouge">plover.cfg</code></li>
+  <li>Restart Plover one last time and you should be all set up to control VLC whenever it’s running!</li>
+</ol>
+
+<p>Here are the strokes that I created for playing and skipping:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">KPH-FPG</code>: <code class="highlighter-rouge">{PLOVER:VLC_seek:-4s}</code></p>
+
+    <p>This skips the file back 4 seconds. Rather than pausing when falling behind, it’s much better to just skip back. This keeps the momentum up and lets you review your work as you go.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">KPH*FPG</code>: <code class="highlighter-rouge">{PLOVER:VLC_toggle_pause}</code></p>
+
+    <p>I <em>try</em> not to pause, but when someone calls or I have to take an hourly break to walk around, I do need to pause and then resume when I come back. This command takes care of that.</p>
+  </li>
+</ul>
+
+<p><em>On foot pedals:</em> I do not use a foot pedal, nor do I think one is necessary for transcribing when you are using a steno machine. Strokes are so readily available at any given time that I don’t think having a separate device and limb to handle skipping backwards is necessary. Plus, if you use steno, you can come up with new strokes uses and vary up functions without removing your old ones. Foot pedals tend to just have a single action and that’s a pretty big disadvantage.</p>
+
+<h3 id="timestamps-and-speaker-strokes">Timestamps and Speaker Strokes</h3>
+
+<p>You could have a dedicated stroke to paste a timestamp, but as the podcast I was transcribing didn’t have any particular need for timestamps at a regular interval, I just placed one on every speaker change. For that reason, it was super convenient to integrate the speaker and the timestamp in the same stroke. Here’s what I used for my two-speaker setup:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">STPHAO</code>: <code class="highlighter-rouge">{^\n\n[^}{:VLC_timestamp}{^]}SPEAKER 1:{-|}</code></li>
+  <li><code class="highlighter-rouge">EUFPLT</code>: <code class="highlighter-rouge">{^\n\n[^}{:VLC_timestamp}{^]}SPEAKER 2:{-|}</code></li>
+</ul>
+
+<p>Of course, real names were included instead of just placeholders. I found the bank-style speaker outlines (top row plus vowels for either side) worked really well for me. I visualized one speaker to my left and one to my right and it made it really trivial to just insert the appropriate speaker stroke whenever the voice changed. The speaker strokes also automatically insert the paragraph breaks, so I never actually had to insert a line break manually, which was satisfying.</p>
+
+<p>Finally, the Plover dictionary comes with a stroke…</p>
+
+<ul>
+  <li><code class="highlighter-rouge">TPHAUBL</code>: <code class="highlighter-rouge">(inaudible)</code></li>
+</ul>
+
+<p>…which is very useful to use to mark places that you need to revisit or can’t understand.</p>
+
+<h2 id="visual-studio-code">Visual Studio Code</h2>
+
+<p><a href="https://code.visualstudio.com/">VSCode</a> is a free text editor by Microsoft. I’ve found it really useful for programming, and was curious as to whether I could use it for writing transcripts.</p>
+
+<p>VSCode does have extensions for vi-style bindings, but I found that its presence interfered with Plover’s rapid editing speed on Mac, unfortunately. So for the purpose of taking down text, I disabled vi bindings.</p>
+
+<h3 id="workspace-settings">Workspace Settings</h3>
+
+<p>As I use VSCode to program, I didn’t want to change lose all my code-friendly settings. Thankfully, VSCode has a feature called workspaces where you can save a particular set of settings and enabled extensions without affecting the rest of your workspaces.</p>
+
+<p>I went ahead and created a workspace and disabled pretty much every single plugin in order to get the most performance out of the editor. Then, I disabled any sort of code-completing features as they are very distracting while writing transcripts. These were my workspace settings:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="s2">"folders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+ </span><span class="p">],</span><span class="w">
+ </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"files.autoSave"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afterDelay"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.wordWrap"</span><span class="p">:</span><span class="w"> </span><span class="s2">"on"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.autoClosingBrackets"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.autoIndent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.quickSuggestions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.parameterHints"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.formatOnType"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.suggestOnTriggerCharacters"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"editor.fontFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Noto Sans"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Of note, I also set the font family to Noto Sans, which is not a fixed-width font. Fixed-width is great for programming but when you use emdashes and Unicode ellipses, they appear collapsed and crowded in your text. Noto Sans is a free body font that can be <a href="https://fonts.google.com/specimen/Noto+Sans">downloaded from Google Fonts</a> and I enjoyed it very much for this job.</p>
+
+<p>The above settings also contain autosave, which defaults to once a second after edits are made. Finally, I stored my files in Google Drive so that I got some revisions/backups.</p>
+
+<h2 id="the-result">The Result</h2>
+
+<p>Now my setup looks something like this:</p>
+
+<p><img alt="Screenshot of VSCode with an in-progress transcript, Plover in the enabled state, and VLC playing a podcast" integrity="sha256-B5ISDgP+i16fY3FIlPCwIybiMr+08WXxHh64xgg0yDU=" crossorigin="anonymous" src="/assets/transcribing_screenshot-0792120e03fe8b5e9f63714894f0b02326e232bfb4f165f11e1eb8c60834c835.png" /></p>
+
+<p><em>Note 1: VSCode has both light and dark themes, which I’d change to match the lighting in my office.</em></p>
+
+<p><em>Note 2: I don’t actually have Plover and VLC visible right next to my transcribing window. I usually just minimize them and focus fully on the transcript. This screenshot was just for demo purposes.</em></p>
+
+<p>I think that I will continue to use this setup for transcribing. If I make any significant changes, I’ll definitely post an update here with my findings. The podcast I was transcribing and that’s pictured here is <a href="http://fringe.games/episodes/ep1-kirk-israel.html">episode 1 of the Fringe Games History Podcast</a> which I recommend checking out if you have any interest in programming or 8-bit gaming.</p>
+
+<p>Some questions that I kind of want to answer for the feature:</p>
+
+<ul>
+  <li>How can I integrate spell-checking into this setup (largely not necessary because I’m stenoing, but it could come up)</li>
+  <li>How can I calculate how much time I spend working on the audio to figure out my ratio of time spent playing the file versus the actual file time?</li>
+</ul>
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Using Plover, VLC, and VSCode for Transcription - https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription by @morinted', 'newwindow', 'width=500, height=225'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" width="15px" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x37__stroke"><g id="Twitter"><rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"/><path clip-rule="evenodd" d="M128,23.294    c-4.703,2.142-9.767,3.59-15.079,4.237c5.424-3.328,9.587-8.606,11.548-14.892c-5.079,3.082-10.691,5.324-16.687,6.526    c-4.778-5.231-11.608-8.498-19.166-8.498c-14.493,0-26.251,12.057-26.251,26.927c0,2.111,0.225,4.16,0.676,6.133    C41.217,42.601,21.871,31.892,8.91,15.582c-2.261,3.991-3.554,8.621-3.554,13.552c0,9.338,4.636,17.581,11.683,22.412    c-4.297-0.131-8.355-1.356-11.901-3.359v0.331c0,13.051,9.053,23.937,21.074,26.403c-2.201,0.632-4.523,0.948-6.92,0.948    c-1.69,0-3.343-0.162-4.944-0.478c3.343,10.694,13.035,18.483,24.53,18.691c-8.986,7.227-20.315,11.533-32.614,11.533    c-2.119,0-4.215-0.123-6.266-0.37c11.623,7.627,25.432,12.088,40.255,12.088c48.309,0,74.717-41.026,74.717-76.612    c0-1.171-0.023-2.342-0.068-3.49C120.036,33.433,124.491,28.695,128,23.294" fill-rule="evenodd" id="Twitter_1_"/></g></g></svg>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription', 'newwindow', 'width=500, height=500'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" width="15px" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x31__stroke"><g id="Facebook_1_"><rect fill="none" height="128" width="128"/><path clip-rule="evenodd" d="M68.369,128H7.065C3.162,128,0,124.836,0,120.935    V7.065C0,3.162,3.162,0,7.065,0h113.871C124.837,0,128,3.162,128,7.065v113.87c0,3.902-3.163,7.065-7.064,7.065H88.318V78.431    h16.638l2.491-19.318H88.318V46.78c0-5.593,1.553-9.404,9.573-9.404l10.229-0.004V20.094c-1.769-0.235-7.841-0.761-14.906-0.761    c-14.749,0-24.846,9.003-24.846,25.535v14.246H51.688v19.318h16.681V128z" fill-rule="evenodd" id="Facebook"/></g></g></svg>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription', 'newwindow', 'width=550, height=400'); return false;" data-turbolinks="false">
+              <svg enable-background="new 0 0 128 128" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x35__stroke"><g id="Google_Plus"><rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"/><path clip-rule="evenodd" d="M40.654,55.935v16.13    c0,0,15.619-0.021,21.979-0.021C59.189,82.5,53.834,88.194,40.654,88.194c-13.338,0-23.748-10.832-23.748-24.194    s10.41-24.194,23.748-24.194c7.052,0,11.607,2.483,15.784,5.944c3.344-3.35,3.065-3.828,11.573-11.877    c-7.222-6.586-16.822-10.6-27.357-10.6C18.201,23.273,0,41.507,0,64c0,22.493,18.201,40.727,40.654,40.727    c33.561,0,41.763-29.275,39.044-48.792H40.654z M113.912,56.742V42.628h-10.063v14.113H89.358v10.081h14.491v14.517h10.063V66.823    H128V56.742H113.912z" fill-rule="evenodd" id="Google_Plus_1_"/></g></g></svg>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//teds-space.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer">
+  <p>
+    Ted's space to place Ted's headspace.
+    <a href="/about" title="About me">About Ted Morin</a>.
+    This site's theme is a fork of <a href="https://github.com/nielsenramon/chalk" target="_blank" title="Chalk Jekyll theme">Chalk</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script integrity="sha256-hyqrRrpVswn795LzQPmn+pbcgGeM2ryhZkQAI7Kk3+A=" crossorigin="anonymous" src="/assets/vendor-872aab46ba55b309fbf792f340f9a7fa96dc80678cdabca166440023b2a4dfe0.js" type="text/javascript"></script>
+<script integrity="sha256-O+2qJ/g82zFNE5cv15G+BMQBUPIaZSefYrRwrIDamPs=" crossorigin="anonymous" src="/assets/application-3bedaa27f83cdb314d13972fd791be04c40150f21a65279f62b470ac80da98fb.js" type="text/javascript"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

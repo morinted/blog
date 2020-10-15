@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>teds.space</title>
+    <description></description>
+    <link>https://teds.space</link>
+    <atom:link href="https://teds.space/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Building a DIY Balance Beam Rail</title>
+        <description>A fun indoor or outdoor activity to test your balance at a fraction of the cost of commercial solutions.</description>
+        <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+        <link>https://teds.space/posts/balance-beam</link>
+        <guid isPermaLink="true">https://teds.space/posts/balance-beam</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Using Plover, VLC, and VSCode for Transcription</title>
+        <description>A guide detailing my setup for using Plover, VLC, and VSCode to write timestamped transcriptions.</description>
+        <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+        <link>https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription</link>
+        <guid isPermaLink="true">https://teds.space/posts/using-plover-vlc-and-vscode-for-transcription</guid>
+      </item>
+    
+      <item>
+        <title>Teardown and cleaning of the Tréal TR</title>
+        <description>Before I sent of my machine I gave it one last maintenance cleaning.</description>
+        <pubDate>Mon, 27 Feb 2017 00:00:00 +0000</pubDate>
+        <link>https://teds.space/posts/teardown-and-cleaning-of-treal</link>
+        <guid isPermaLink="true">https://teds.space/posts/teardown-and-cleaning-of-treal</guid>
+      </item>
+    
+      <item>
+        <title>The best way to write in steno</title>
+        <description>Stanley's impromptu rant on the right way to write steno</description>
+        <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+        <link>https://teds.space/posts/best-way-to-write-in-steno</link>
+        <guid isPermaLink="true">https://teds.space/posts/best-way-to-write-in-steno</guid>
+      </item>
+    
+      <item>
+        <title>Stenomod, an affordable steno machine, reviewed</title>
+        <description></description>
+        <pubDate>Thu, 27 Oct 2016 16:09:00 +0000</pubDate>
+        <link>https://teds.space/posts/stenomod-affordable-steno-machine</link>
+        <guid isPermaLink="true">https://teds.space/posts/stenomod-affordable-steno-machine</guid>
+      </item>
+    
+      <item>
+        <title>Steno-writing URLs in browser address bars</title>
+        <description></description>
+        <pubDate>Tue, 04 Aug 2015 19:31:00 +0000</pubDate>
+        <link>https://teds.space/posts/type-urls-in-steno-disable-inline</link>
+        <guid isPermaLink="true">https://teds.space/posts/type-urls-in-steno-disable-inline</guid>
+      </item>
+    
+      <item>
+        <title>Chocolatey Versus Ninite—A User's Perspective</title>
+        <description></description>
+        <pubDate>Sat, 01 Aug 2015 18:55:00 +0000</pubDate>
+        <link>https://teds.space/posts/chocolatey-versus-ninite-users</link>
+        <guid isPermaLink="true">https://teds.space/posts/chocolatey-versus-ninite-users</guid>
+      </item>
+    
+      <item>
+        <title>I love local multiplayer games and I'm not afraid to admit it</title>
+        <description></description>
+        <pubDate>Sat, 01 Aug 2015 16:06:00 +0000</pubDate>
+        <link>https://teds.space/posts/i-love-local-multiplayer-games-and-im</link>
+        <guid isPermaLink="true">https://teds.space/posts/i-love-local-multiplayer-games-and-im</guid>
+      </item>
+    
+      <item>
+        <title>Ideas for a Steno Version of Scrabble</title>
+        <description></description>
+        <pubDate>Sun, 26 Jul 2015 02:18:00 +0000</pubDate>
+        <link>https://teds.space/posts/ideas-for-steno-version-of-scrabble</link>
+        <guid isPermaLink="true">https://teds.space/posts/ideas-for-steno-version-of-scrabble</guid>
+      </item>
+    
+      <item>
+        <title>Getting Faster</title>
+        <description></description>
+        <pubDate>Mon, 08 Jun 2015 15:07:00 +0000</pubDate>
+        <link>https://teds.space/posts/getting-faster</link>
+        <guid isPermaLink="true">https://teds.space/posts/getting-faster</guid>
+      </item>
+    
   </channel>
 </rss>

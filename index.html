@@ -1,49 +1,503 @@
----
-layout: default
-title: "teds.space"
-description: "Ted's space to place Ted's headspace."
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>teds.space | teds.space</title>
+  <meta name="description" content="Ted's space to place Ted's headspace.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://teds.space/favicon.ico" type="image/x-icon" />
 
-<ul class="article-list">
-  {% for post in paginator.posts %}
+  <meta property="og:title" content="teds.space">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teds.space/">
+  <meta property="og:description" content="Ted's space to place Ted's headspace.">
+  <meta property="og:site_name" content="teds.space">
+  <meta property="og:image" content="https://teds.space/assets/og-image-441e309118b7f61b9fecbe0ec9ab6ff7e95fa7c67454fc84b0f0718f5e5f4792.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://teds.space/">
+  <meta name="twitter:title" content="teds.space">
+  <meta name="twitter:description" content="Ted's space to place Ted's headspace.">
+  <meta name="twitter:image" content="https://teds.space/assets/og-image-441e309118b7f61b9fecbe0ec9ab6ff7e95fa7c67454fc84b0f0718f5e5f4792.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-b22bd14acb63ee6a79ef145988fcf489786372f0ededa6ead21f5f2020496acb.png">
+  <link href="https://teds.space/feed.xml" type="application/rss+xml" rel="alternate" title="teds.space Last 10 blog posts" />
+
+  
+    <link rel="stylesheet" type="text/css" integrity="sha256-1f9xHGtwx54teLbRVC+6kfuhOaDLXNlHlib+929DQKk=" crossorigin="anonymous" href="/assets/light-d5ff711c6b70c79e2d78b6d1542fba91fba139a0cb5cd9479626fef76f4340a9.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav">
+  <a href="/" class="header-logo" title="teds.space">teds.space</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <span class="icon icon-android-person"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://twitter.com/morinted" target="_blank" title="Twitter">
+          <span class="icon icon-social-twitter"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://www.facebook.com/morinted" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/morinted" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/morinted" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:morinted@gmail.com" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <ul class="article-list">
+  
     <li class="article-list-item">
-      <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
+      <a href="/posts/balance-beam" title="Building a DIY Balance Beam Rail">
         <h5>
-          {{ post.title }}
+          Building a DIY Balance Beam Rail
           <span class="icon icon-ios-arrow-thin-right"></span>
         </h5>
       </a>
-      <p>{{ post.description }}</p>
+      <p>A fun indoor or outdoor activity to test your balance at a fraction of the cost of commercial solutions.</p>
       <div class="article-list-footer">
         <span class="article-list-date">
-          {{ post.date | date: "%B %-d, %Y" }}
+          October 14, 2020
         </span>
         <span class="article-list-divider">-</span>
         <span class="article-list-minutes">
-          {% capture words %}
-            {{ post.content | number_of_words }}
-          {% endcapture %}
-          {% unless words contains "-" %}
-            {{ words | plus: 250 | divided_by: 250 | append: " minute read" }}
-          {% endunless %}
+          
+          
+            10 minute read
+          
         </span>
         <span class="article-list-divider">-</span>
         <div class="article-list-tags">
-          {% for tag in post.tags %}
-            <a href="{{ 'tag/' | relative_url }}{{ tag }}">{{ tag }}</a>
-          {% endfor %}
+          
+            <a href="/tag/movement">movement</a>
+          
         </div>
       </div>
     </li>
-  {% endfor %}
-  {% if paginator.total_pages > 1 %}
-    <li class="article-pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="article-pagination-right">Newer posts <span class="icon icon-ios-arrow-thin-right"></span></a>
-      {% endif %}
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}"><span class="icon icon-ios-arrow-thin-left"></span> Older posts</a>
-      {% endif %}
+  
+    <li class="article-list-item">
+      <a href="/posts/using-plover-vlc-and-vscode-for-transcription" title="Using Plover, VLC, and VSCode for Transcription">
+        <h5>
+          Using Plover, VLC, and VSCode for Transcription
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p>A guide detailing my setup for using Plover, VLC, and VSCode to write timestamped transcriptions.</p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          May 14, 2018
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            6 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+        </div>
+      </div>
     </li>
-  {% endif %}
+  
+    <li class="article-list-item">
+      <a href="/posts/teardown-and-cleaning-of-treal" title="Teardown and cleaning of the Tréal TR">
+        <h5>
+          Teardown and cleaning of the Tréal TR
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p>Before I sent of my machine I gave it one last maintenance cleaning.</p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          February 27, 2017
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            4 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/best-way-to-write-in-steno" title="The best way to write in steno">
+        <h5>
+          The best way to write in steno
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p>Stanley's impromptu rant on the right way to write steno</p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          February 15, 2017
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            2 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/stenomod-affordable-steno-machine" title="Stenomod, an affordable steno machine, reviewed">
+        <h5>
+          Stenomod, an affordable steno machine, reviewed
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          October 27, 2016
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            8 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/type-urls-in-steno-disable-inline" title="Steno-writing URLs in browser address bars">
+        <h5>
+          Steno-writing URLs in browser address bars
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          August 4, 2015
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            2 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/chocolatey-versus-ninite-users" title="Chocolatey Versus Ninite—A User's Perspective">
+        <h5>
+          Chocolatey Versus Ninite—A User's Perspective
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          August 1, 2015
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            6 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/programming">programming</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/i-love-local-multiplayer-games-and-im" title="I love local multiplayer games and I'm not afraid to admit it">
+        <h5>
+          I love local multiplayer games and I'm not afraid to admit it
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          August 1, 2015
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            9 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/gaming">gaming</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/ideas-for-steno-version-of-scrabble" title="Ideas for a Steno Version of Scrabble">
+        <h5>
+          Ideas for a Steno Version of Scrabble
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          July 26, 2015
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            4 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/getting-faster" title="Getting Faster">
+        <h5>
+          Getting Faster
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          June 8, 2015
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            4 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/programming" title="Programming">
+        <h5>
+          Programming
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          November 8, 2014
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            3 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/learning-plover" title="Learning Plover">
+        <h5>
+          Learning Plover
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          August 16, 2014
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            2 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+    <li class="article-list-item">
+      <a href="/posts/ive-been-typing-for-little-while" title="I've Been Typing for a Little While">
+        <h5>
+          I've Been Typing for a Little While
+          <span class="icon icon-ios-arrow-thin-right"></span>
+        </h5>
+      </a>
+      <p></p>
+      <div class="article-list-footer">
+        <span class="article-list-date">
+          June 26, 2014
+        </span>
+        <span class="article-list-divider">-</span>
+        <span class="article-list-minutes">
+          
+          
+            8 minute read
+          
+        </span>
+        <span class="article-list-divider">-</span>
+        <div class="article-list-tags">
+          
+            <a href="/tag/steno">steno</a>
+          
+            <a href="/tag/typing">typing</a>
+          
+        </div>
+      </div>
+    </li>
+  
+  
 </ul>
+
+        <footer class="footer">
+  <p>
+    Ted's space to place Ted's headspace.
+    <a href="/about" title="About me">About Ted Morin</a>.
+    This site's theme is a fork of <a href="https://github.com/nielsenramon/chalk" target="_blank" title="Chalk Jekyll theme">Chalk</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script integrity="sha256-hyqrRrpVswn795LzQPmn+pbcgGeM2ryhZkQAI7Kk3+A=" crossorigin="anonymous" src="/assets/vendor-872aab46ba55b309fbf792f340f9a7fa96dc80678cdabca166440023b2a4dfe0.js" type="text/javascript"></script>
+<script integrity="sha256-O+2qJ/g82zFNE5cv15G+BMQBUPIaZSefYrRwrIDamPs=" crossorigin="anonymous" src="/assets/application-3bedaa27f83cdb314d13972fd791be04c40150f21a65279f62b470ac80da98fb.js" type="text/javascript"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

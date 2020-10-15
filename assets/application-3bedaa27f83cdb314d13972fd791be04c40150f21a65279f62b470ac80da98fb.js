@@ -1,0 +1,1 @@
+$(document).on("turbolinks:load",function(o){$(".fluidbox-trigger").fluidbox(),"function"==typeof ga&&(ga("set","location",o.data.url),ga("send","pageview"))});

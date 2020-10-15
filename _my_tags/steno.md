@@ -1,4 +1,0 @@
----
-slug: steno
-name: Steno
----
